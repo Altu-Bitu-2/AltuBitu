@@ -20,19 +20,9 @@
 #include<map>
 using namespace std;
 
-string get_ex(string s){
-    int i;
-    for(i = 0; i < s.length(); i++){
-        if(s.at(i) == '.') {
-            break;
-        }
-    }
-    return s.substr(i+1, s.length()-i-1);
-}
-
 int main(){
     ios_base::sync_with_stdio(0); cin.tie(0); cout.tie(0);
-    int N;
+    int N, tmp;
     string s, extn;
     map<string, int> m; //<extension, number>
 
@@ -42,7 +32,8 @@ int main(){
         //input
         cin >> s;
         //chk extension
-        extn = get_ex(s);
+        tmp = s.find(".");
+        extn = s.substr(tmp+1, s.length()-tmp-1);
         //if in map -> ++ or insert in map <extension, 1>
         if(m.find(extn) != m.end()) m[extn]++;
         else m.insert(pair<string, int>(extn, 1));

@@ -15,11 +15,11 @@
 /*
 출석이 확인된 학회원의 인원 수를 출력한다.
 */
+//입력값만 잘 설정해주면 생각보다 쉬웠던 문제. set 사용 할 생각 못했으면 더 어려웠을 듯.
 
 #include<iostream>
 #include<string>
 #include<set>
-//입력값만 잘 설정해주면 생각보다 쉬웠던 문제. set 사용 할 생각 못했으면 더 어려웠을 듯.
 using namespace std;
 
 int calc(string s){//change 22:00 -> 2200

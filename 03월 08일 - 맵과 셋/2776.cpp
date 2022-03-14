@@ -5,7 +5,37 @@
 /*
 ‘수첩2’에 적혀있는 M개의 숫자 순서대로, ‘수첩1’에 있으면 1을, 없으면 0을 출력한다.
 */
+//unodered set 사용
+#include<iostream>
+#include<unordered_set>
+using namespace std;
+
+int main(){
+    ios_base::sync_with_stdio(0); cin.tie(0); cout.tie(0);
+    int n, m, input, T;
+    cin >> T;
+    while(T--){
+        unordered_set<int> s;
+        cin >> n;
+        while(n--){
+            cin >> input;
+            s.insert(input);
+        }
+        cin >> m;
+        while(m--){
+            cin >> input;
+            if(s.find(input) == s.end()) cout << "0\n";
+            else cout << "1\n";
+        }
+    }
+    return 0;
+}
+
+
+
+
 //set 사용 시 시간 초과 -> 이분탐색으로 변경
+/*
 #include<iostream>
 #include<vector>
 #include<algorithm>
@@ -48,3 +78,4 @@ int main(){
     }
     return 0;
 }
+*/
