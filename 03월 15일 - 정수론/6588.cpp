@@ -1,9 +1,9 @@
 #include<iostream>
-#include<cmath>
 using namespace std;
+
 bool isPN(int n){
-    for(int i = 2; i < sqrt(n); i++){
-        if(n%i==0)return false;
+    for(int i = 2; i*i <= n; i++){
+        if(n%i==0) return false;
     }
     return true;
 }
@@ -16,11 +16,9 @@ int main(){
         chk = false;
         cin >> n;
         if(n==0) break;
-        for(int i = 1; i < n/2; i++){
-            a = 2*i +1;
-            b = n - a;
-            if(isPN(a) && isPN(b)){
-                cout << n <<  " = " << a << " + "<< b<<"\n";
+        for(int i = 3; i < n; i+=2){
+            if(isPN(i) && isPN(n-i)){
+                cout << n << " = " << i << " + " << n - i << "\n";
                 chk = true;
                 break;
             }
