@@ -2,6 +2,7 @@
 #include<utility>
 using namespace std;
 //처음에 3중 for문 사용 out of bounds -> i = 123~987로 변경 -> 0이 들어가는 수 제외 ->??
+//#########array 선언이 변수보다 빨라서 문제가 생김...
 pair<int, int> calc(int n, int x){
     pair<int, int> ans; // strike, ball
     ans.first = 0; ans.second = 0;
@@ -21,8 +22,9 @@ int main(){
     int ans = 0, N, h, t, o;
     pair<int,int> tmp;
     bool swtch;
-    int arr[N+5][3];
     cin  >> N;
+    int arr[N+5][3];
+
     for(int i = 0; i < N; i++) {
         cin >> arr[i][0] >> arr[i][1] >> arr[i][2];
         //cout << i << " : "<<arr[i][0]<< ", "<< arr[i][1]<< ", " << arr[i][2]<<"\n";

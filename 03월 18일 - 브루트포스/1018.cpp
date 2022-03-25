@@ -2,7 +2,7 @@
 using namespace std;
 int main(){
     ios_base::sync_with_stdio(0); cin.tie(0); cout.tie(0);
-    int N, M, ans, min = 64;
+    int N, M, ans, mins = 64;
     cin >> N >> M;
     char arr[N+1][M+1];
     for(int i = 0; i<N; i++){
@@ -19,10 +19,9 @@ int main(){
                     else if((p+q)%2 == 1 && arr[i+p][j+q] == 'W') ans++;
                 }
             }
-            ans = ans<64-ans? ans : 64-ans;
-            min = min< ans ? min : ans;
+            mins = min(mins, min(ans, 64-ans));
         }
     }
-    cout << min << "\n";
+    cout << mins << "\n";
     return 0;
 }
