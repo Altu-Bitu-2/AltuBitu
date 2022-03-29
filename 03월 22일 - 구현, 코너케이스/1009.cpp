@@ -8,11 +8,11 @@ int main(){
     cin >> T;
     while(T--){
         cin >> a >> b;
-        if(b%4 == 0) b =4;
-        else b%=4;
-        ans = pow(a, b);
-        ans%=10;
-        cout << ans << "\n";
+        b%=4;
+        if(b==0) b = 4;
+        ans =pow(a,b);
+        if(ans %10 == 0) cout << "10\n";
+        else cout << ans%10 << "\n";
     }
     return 0;
 }
